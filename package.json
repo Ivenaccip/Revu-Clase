@@ -1,0 +1,13 @@
+{
+  "name": "revu-clase",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page de REVU servida por un servidor estatico Node sin dependencias (Hostinger-ready).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

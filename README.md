@@ -4,16 +4,30 @@ Landing page de **REVU** — el cohort de 8 semanas donde dueños de PyMEs B2B c
 
 ## Ver la página
 
-Es un sitio estático sin dependencias de build. Puedes abrirlo de dos formas:
+Es un sitio estático sin dependencias de build.
 
-**Opción rápida:** abre `index.html` directamente en el navegador.
-
-**Con servidor local** (recomendado, para que el video y las imágenes carguen bien):
+**Con Node** (recomendado — es como corre en producción):
 
 ```bash
-python -m http.server 8000
-# luego abre http://127.0.0.1:8000/index.html
+npm start
+# abre http://localhost:3000
 ```
+
+El servidor escucha en `process.env.PORT` (o `3000` en local) y soporta HTTP Range,
+así que el video del hero hace streaming y seek correctamente.
+
+**Opción rápida sin Node:** abre `index.html` directamente en el navegador.
+
+## Despliegue en Hostinger (Node.js app)
+
+El proyecto está listo para Hostinger como aplicación Node:
+
+- `package.json` → script `start`: `node server.js`.
+- `server.js` → servidor estático **sin dependencias** (solo módulos nativos de Node),
+  escucha en `process.env.PORT` y sirve todos los estáticos con soporte de Range.
+
+En el panel de Hostinger: crea una app Node.js, apunta al repo, comando de inicio
+`npm start` (o `node server.js`). No hay `npm install` obligatorio porque no hay dependencias.
 
 ## Estructura
 

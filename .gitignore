@@ -1,3 +1,7 @@
+# Node
+node_modules/
+npm-debug.log*
+
 # Editor / tooling metadata (Claude Design)
 .thumbnail
 .thumbnail/

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>REVU · Experto en ventas con IA en 8 semanas</title>
+<meta name="description" content="REVU es el cohort de 8 semanas donde dueños de PyMEs B2B construyen su propio sistema de ventas con infraestructura de IA, guiados por expertos con trayectoria comprobada.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #0B1626; }
+  * { box-sizing: border-box; }
+
+  @keyframes revuGlow {
+    0%,100% { box-shadow: 0 0 0 0 rgba(212,169,74,0.0), 0 10px 30px -8px rgba(212,169,74,0.35); }
+    50%     { box-shadow: 0 0 0 0 rgba(212,169,74,0.0), 0 14px 44px -6px rgba(212,169,74,0.6); }
+  }
+
+  /* --- Reveal on scroll --- */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .9s ease, transform .9s ease;
+  }
+  .hero-reveal {
+    transition: opacity 1s ease .2s, transform 1s ease .2s;
+  }
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* --- Hover interactions (from prototype style-hover) --- */
+  .btn-cta {
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .btn-nav:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -6px rgba(212,169,74,0.6);
+  }
+  .btn-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 42px -8px rgba(212,169,74,0.7);
+  }
+  .btn-pricing:hover {
+    transform: translateY(-2px);
+  }
+  .lift-card {
+    transition: transform .35s ease, border-color .35s ease;
+  }
+  .lift-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(212,169,74,0.5);
+  }
+
+  /* --- Responsive nav links (replaces JS resize handler, >=860px) --- */
+  .nav-links { display: none; gap: 32px; align-items: center; }
+  @media (min-width: 860px) {
+    .nav-links { display: flex; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    [data-reveal] { transition: none; opacity: 1; transform: none; }
+    .revu-glow { animation: none !important; }
+  }
+</style>
+</head>
+
+<body>
+<div style="font-family:'Inter',sans-serif; color:#F5F6F8; background:#0B1626; overflow-x:hidden; width:100%;">
+
+  <!-- 1) NAVBAR -->
+  <nav style="position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:18px clamp(20px,5vw,64px); background:rgba(11,22,38,0.35); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid rgba(245,246,248,0.08);">
+    <a href="#top" style="font-family:'Archivo',sans-serif; font-weight:900; font-size:24px; letter-spacing:0.14em; color:#F5F6F8; text-decoration:none;">REVU</a>
+    <div style="display:flex; align-items:center; gap:clamp(18px,2.5vw,36px);">
+      <div class="nav-links">
+        <a href="#solucion" style="color:rgba(245,246,248,0.82); text-decoration:none; font-size:15px; font-weight:500;">El cohort</a>
+        <a href="#features" style="color:rgba(245,246,248,0.82); text-decoration:none; font-size:15px; font-weight:500;">Cómo funciona</a>
+        <a href="#mentores" style="color:rgba(245,246,248,0.82); text-decoration:none; font-size:15px; font-weight:500;">Mentores</a>
+        <a href="#testimonials" style="color:rgba(245,246,248,0.82); text-decoration:none; font-size:15px; font-weight:500;">Comunidad</a>
+      </div>
+      <a href="#pricing" class="btn-cta btn-nav" style="display:inline-block; background:#D4A94A; color:#0B1626; font-weight:700; font-size:15px; padding:11px 24px; border-radius:100px; text-decoration:none;">Aplica</a>
+    </div>
+  </nav>
+
+  <!-- 2) HERO -->
+  <section id="top" style="position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden;">
+    <video id="hero-video" poster="uploads/imagen1.png" muted playsinline autoplay preload="auto" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;">
+      <source src="uploads/transicion.mp4" type="video/mp4">
+    </video>
+    <div style="position:absolute; inset:0; z-index:1; background:linear-gradient(90deg, rgba(11,22,38,0.92) 0%, rgba(11,22,38,0.72) 34%, rgba(11,22,38,0.28) 62%, rgba(11,22,38,0.05) 100%);"></div>
+    <div style="position:absolute; inset:0; z-index:1; background:linear-gradient(180deg, rgba(11,22,38,0.4) 0%, rgba(11,22,38,0) 30%, rgba(11,22,38,0) 70%, rgba(11,22,38,0.55) 100%);"></div>
+    <div data-reveal class="hero-reveal" style="position:relative; z-index:2; max-width:1360px; width:100%; margin:0 auto; padding:0 clamp(20px,5vw,64px);">
+      <div style="max-width:720px;">
+        <span style="display:inline-block; font-family:'Archivo',sans-serif; font-weight:600; font-size:13px; letter-spacing:0.28em; text-transform:uppercase; color:#D4A94A; margin-bottom:26px;">Comunidad para dueños de PyMEs B2B</span>
+        <h1 style="font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(40px,6.4vw,84px); line-height:0.98; letter-spacing:-0.02em; margin:0 0 26px; color:#F5F6F8;">Experto en ventas con IA en 8&nbsp;semanas.</h1>
+        <p style="font-size:clamp(16px,1.5vw,20px); line-height:1.6; color:rgba(245,246,248,0.82); max-width:600px; margin:0 0 38px;">REVU es el cohort donde dueños de PyMEs B2B construyen su propio sistema de ventas con infraestructura de IA. Te guían expertos con trayectoria comprobada, y avanzas junto a otros dueños que van hacia la misma cumbre.</p>
+        <a href="#pricing" class="btn-cta btn-hero" style="display:inline-flex; align-items:center; gap:10px; background:#D4A94A; color:#0B1626; font-weight:700; font-size:17px; padding:16px 34px; border-radius:100px; text-decoration:none;">Aplica al próximo cohort →</a>
+      </div>
+    </div>
+    <div style="position:absolute; bottom:26px; left:50%; transform:translateX(-50%); z-index:2; display:flex; flex-direction:column; align-items:center; gap:8px; color:rgba(245,246,248,0.5); font-size:11px; letter-spacing:0.2em; text-transform:uppercase;">
+      <span>Escala</span>
+      <span style="width:1px; height:34px; background:linear-gradient(180deg, rgba(245,246,248,0.5), transparent);"></span>
+    </div>
+  </section>
+
+  <!-- 3) PROBLEMA -->
+  <section style="background:#14294D; padding:clamp(90px,13vh,160px) clamp(20px,5vw,64px);">
+    <div data-reveal style="max-width:900px; margin:0 auto; text-align:center;">
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(28px,4vw,52px); line-height:1.08; letter-spacing:-0.015em; margin:0 0 34px; color:#F5F6F8;">Todos te dicen que uses IA.<br>Casi nadie te muestra cómo convertirla en ventas.</h2>
+      <p style="font-size:clamp(17px,1.6vw,22px); line-height:1.65; color:rgba(245,246,248,0.7); margin:0 0 20px;">Acumulas herramientas, tutoriales y promesas — y tu facturación sigue en el mismo lugar.</p>
+      <p style="font-size:clamp(17px,1.6vw,22px); line-height:1.65; color:#D4A94A; font-weight:500; margin:0;">El problema no es la IA. Es que nadie la ha conectado con tu forma de vender.</p>
+    </div>
+  </section>
+
+  <!-- 4) SOLUCIÓN -->
+  <section id="solucion" style="background:linear-gradient(180deg,#2C4F7C 0%, #22406A 100%); padding:clamp(90px,13vh,150px) clamp(20px,5vw,64px);">
+    <div data-reveal style="max-width:1200px; margin:0 auto;">
+      <div style="max-width:760px; margin:0 auto 62px; text-align:center;">
+        <span style="display:inline-block; font-family:'Archivo',sans-serif; font-weight:600; font-size:13px; letter-spacing:0.28em; text-transform:uppercase; color:#D4A94A; margin-bottom:22px;">La solución</span>
+        <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(26px,3.4vw,44px); line-height:1.12; letter-spacing:-0.015em; margin:0; color:#D4A94A;">REVU cierra esa brecha. En 8 semanas dejas de coleccionar teoría y sales con un sistema que vende.</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px;">
+        <div class="lift-card" style="background:rgba(11,22,38,0.4); border:1px solid rgba(212,169,74,0.18); border-radius:18px; padding:38px 32px;">
+          <div style="font-family:'Archivo',sans-serif; font-weight:900; font-size:34px; color:#D4A94A; margin-bottom:22px;">01</div>
+          <h3 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:22px; line-height:1.2; margin:0 0 14px; color:#F5F6F8;">Un sistema de ventas propio, no teoría.</h3>
+          <p style="font-size:15.5px; line-height:1.62; color:rgba(245,246,248,0.72); margin:0;">En 16 clases construyes la infraestructura que tu empresa usa para vender más — hecha a la medida de tu negocio.</p>
+        </div>
+        <div class="lift-card" style="background:rgba(11,22,38,0.4); border:1px solid rgba(212,169,74,0.18); border-radius:18px; padding:38px 32px;">
+          <div style="font-family:'Archivo',sans-serif; font-weight:900; font-size:34px; color:#D4A94A; margin-bottom:22px;">02</div>
+          <h3 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:22px; line-height:1.2; margin:0 0 14px; color:#F5F6F8;">Guía experta que no te suelta.</h3>
+          <p style="font-size:15.5px; line-height:1.62; color:rgba(245,246,248,0.72); margin:0;">Expertos en ventas y en IA resuelven tus dudas y mantienen tu sistema actualizado durante todo el proceso.</p>
+        </div>
+        <div class="lift-card" style="background:rgba(11,22,38,0.4); border:1px solid rgba(212,169,74,0.18); border-radius:18px; padding:38px 32px;">
+          <div style="font-family:'Archivo',sans-serif; font-weight:900; font-size:34px; color:#D4A94A; margin-bottom:22px;">03</div>
+          <h3 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:22px; line-height:1.2; margin:0 0 14px; color:#F5F6F8;">Una comunidad de pares a tu ritmo.</h3>
+          <p style="font-size:15.5px; line-height:1.62; color:rgba(245,246,248,0.72); margin:0;">Avanzas junto a otros dueños de PyMEs B2B en tu misma etapa: cierran clientes y comparten lo que funciona.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5) FEATURES -->
+  <section id="features" style="background:#0B1626; padding:clamp(90px,13vh,150px) clamp(20px,5vw,64px);">
+    <div data-reveal style="max-width:1200px; margin:0 auto;">
+      <div style="max-width:640px; margin:0 0 60px;">
+        <span style="display:inline-block; font-family:'Archivo',sans-serif; font-weight:600; font-size:13px; letter-spacing:0.28em; text-transform:uppercase; color:#D4A94A; margin-bottom:22px;">Cómo funciona</span>
+        <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(28px,3.8vw,48px); line-height:1.08; letter-spacing:-0.015em; margin:0; color:#F5F6F8;">Todo lo que incluye el cohort.</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2px; background:rgba(245,246,248,0.08); border:1px solid rgba(245,246,248,0.08); border-radius:20px; overflow:hidden;">
+        <div style="background:#0B1626; padding:40px 34px;">
+          <div style="width:34px; height:2px; background:#D4A94A; margin-bottom:24px;"></div>
+          <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:19px; margin:0 0 12px; color:#F5F6F8;">Cohort de 8 semanas</h3>
+          <p style="font-size:15px; line-height:1.6; color:rgba(245,246,248,0.66); margin:0;">16 clases en vivo con estructura probada.</p>
+        </div>
+        <div style="background:#0B1626; padding:40px 34px;">
+          <div style="width:34px; height:2px; background:#D4A94A; margin-bottom:24px;"></div>
+          <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:19px; margin:0 0 12px; color:#F5F6F8;">Tu sistema de ventas, paso a paso</h3>
+          <p style="font-size:15px; line-height:1.6; color:rgba(245,246,248,0.66); margin:0;">Infraestructura real a la medida.</p>
+        </div>
+        <div style="background:#0B1626; padding:40px 34px;">
+          <div style="width:34px; height:2px; background:#D4A94A; margin-bottom:24px;"></div>
+          <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:19px; margin:0 0 12px; color:#F5F6F8;">IA aplicada a tu empresa</h3>
+          <p style="font-size:15px; line-height:1.6; color:rgba(245,246,248,0.66); margin:0;">Conectada a tu operación de ventas, no a ejercicios de laboratorio.</p>
+        </div>
+        <div style="background:#0B1626; padding:40px 34px;">
+          <div style="width:34px; height:2px; background:#D4A94A; margin-bottom:24px;"></div>
+          <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:19px; margin:0 0 12px; color:#F5F6F8;">Mentoría de dos frentes</h3>
+          <p style="font-size:15px; line-height:1.6; color:rgba(245,246,248,0.66); margin:0;">Expertos en ventas y en IA, juntos.</p>
+        </div>
+        <div style="background:#0B1626; padding:40px 34px;">
+          <div style="width:34px; height:2px; background:#D4A94A; margin-bottom:24px;"></div>
+          <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:19px; margin:0 0 12px; color:#F5F6F8;">Comunidad privada de dueños B2B</h3>
+          <p style="font-size:15px; line-height:1.6; color:rgba(245,246,248,0.66); margin:0;">Empresarios en tu misma etapa.</p>
+        </div>
+        <div style="background:#0B1626; padding:40px 34px;">
+          <div style="width:34px; height:2px; background:#D4A94A; margin-bottom:24px;"></div>
+          <h3 style="font-family:'Archivo',sans-serif; font-weight:700; font-size:19px; margin:0 0 12px; color:#F5F6F8;">Soporte y actualizaciones constantes</h3>
+          <p style="font-size:15px; line-height:1.6; color:rgba(245,246,248,0.66); margin:0;">Tu sistema no se queda atrás.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6) AUTORIDAD -->
+  <section id="autoridad" style="position:relative; background:#14294D; padding:clamp(90px,13vh,160px) clamp(20px,5vw,64px); overflow:hidden;">
+    <img id="ridge" src="uploads/imagen1.png" alt="" style="position:absolute; left:0; right:0; bottom:0; width:100%; height:52%; object-fit:cover; object-position:center bottom; opacity:0.22; z-index:0; will-change:transform;">
+    <div style="position:absolute; inset:0; z-index:0; background:linear-gradient(180deg,#14294D 0%, rgba(20,41,77,0.55) 55%, rgba(20,41,77,0.8) 100%);"></div>
+    <div data-reveal style="position:relative; z-index:1; max-width:900px; margin:0 auto; text-align:center;">
+      <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(28px,4vw,52px); line-height:1.08; letter-spacing:-0.015em; margin:0 0 28px; color:#F5F6F8;">Guiado por quienes ya cerraron los tratos.</h2>
+      <p style="font-size:clamp(16px,1.5vw,20px); line-height:1.65; color:rgba(245,246,248,0.78); margin:0 0 60px;">No son gurús de internet. Son expertos en ventas con más de 10 años cerrando negocios B2B, y expertos en IA con 6 años construyendo infraestructura que funciona. Están disponibles para tus dudas y mantienen tu sistema al día durante todo el cohort.</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:28px 20px; padding-top:44px; border-top:1px solid rgba(245,246,248,0.14);">
+        <div><div style="font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(34px,4vw,48px); color:#D4A94A; line-height:1;">+10</div><div style="font-size:13px; color:rgba(245,246,248,0.66); margin-top:8px; letter-spacing:0.03em;">años en ventas B2B</div></div>
+        <div><div style="font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(34px,4vw,48px); color:#D4A94A; line-height:1;">+6</div><div style="font-size:13px; color:rgba(245,246,248,0.66); margin-top:8px; letter-spacing:0.03em;">años en IA aplicada</div></div>
+        <div><div style="font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(34px,4vw,48px); color:#D4A94A; line-height:1;">16</div><div style="font-size:13px; color:rgba(245,246,248,0.66); margin-top:8px; letter-spacing:0.03em;">clases</div></div>
+        <div><div style="font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(34px,4vw,48px); color:#D4A94A; line-height:1;">8</div><div style="font-size:13px; color:rgba(245,246,248,0.66); margin-top:8px; letter-spacing:0.03em;">semanas</div></div>
+        <div><div style="font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(34px,4vw,48px); color:#D4A94A; line-height:1;">1</div><div style="font-size:13px; color:rgba(245,246,248,0.66); margin-top:8px; letter-spacing:0.03em;">sistema propio</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6.5) MENTORES -->
+  <section id="mentores" style="background:#0B1626; padding:clamp(90px,13vh,150px) clamp(20px,5vw,64px);">
+    <div data-reveal style="max-width:1200px; margin:0 auto;">
+      <div style="max-width:660px; margin:0 0 60px;">
+        <span style="display:inline-block; font-family:'Archivo',sans-serif; font-weight:600; font-size:13px; letter-spacing:0.28em; text-transform:uppercase; color:#D4A94A; margin-bottom:22px;">Mentores</span>
+        <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(28px,3.8vw,48px); line-height:1.08; letter-spacing:-0.015em; margin:0; color:#F5F6F8;">Quienes te guían hasta la cumbre.</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px;">
+
+        <div class="lift-card" style="position:relative; border-radius:20px; overflow:hidden; background:linear-gradient(180deg,#2C4F7C 0%, #1B355F 55%, #14294D 100%); border:1px solid rgba(212,169,74,0.16);">
+          <div style="aspect-ratio:1 / 1.18; display:flex; align-items:flex-end; justify-content:center; overflow:hidden;">
+            <img src="assets/thomas.png" alt="Thomas Freund" style="width:100%; height:100%; object-fit:cover; object-position:center top;">
+          </div>
+          <div style="position:absolute; left:0; right:0; bottom:0; padding:24px 26px; background:linear-gradient(180deg, rgba(11,22,38,0) 0%, rgba(11,22,38,0.85) 62%, rgba(11,22,38,0.95) 100%);">
+            <div style="font-size:12px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#D4A94A; margin-bottom:6px;">Ventas B2B</div>
+            <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:22px; color:#F5F6F8;">Thomas Freund</div>
+          </div>
+        </div>
+
+        <div class="lift-card" style="position:relative; border-radius:20px; overflow:hidden; background:linear-gradient(180deg,#2C4F7C 0%, #1B355F 55%, #14294D 100%); border:1px solid rgba(212,169,74,0.16);">
+          <div style="aspect-ratio:1 / 1.18; display:flex; align-items:flex-end; justify-content:center; overflow:hidden;">
+            <img src="assets/andres.png" alt="Andres Najera" style="width:100%; height:100%; object-fit:cover; object-position:center top;">
+          </div>
+          <div style="position:absolute; left:0; right:0; bottom:0; padding:24px 26px; background:linear-gradient(180deg, rgba(11,22,38,0) 0%, rgba(11,22,38,0.85) 62%, rgba(11,22,38,0.95) 100%);">
+            <div style="font-size:12px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#D4A94A; margin-bottom:6px;">Ventas B2B</div>
+            <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:22px; color:#F5F6F8;">Andres Najera</div>
+          </div>
+        </div>
+
+        <div class="lift-card" style="position:relative; border-radius:20px; overflow:hidden; background:linear-gradient(180deg,#2C4F7C 0%, #1B355F 55%, #14294D 100%); border:1px solid rgba(212,169,74,0.16);">
+          <div style="aspect-ratio:1 / 1.18; display:flex; align-items:flex-end; justify-content:center; overflow:hidden;">
+            <img src="assets/guillermo.png" alt="Guillermo Montaño" style="width:100%; height:100%; object-fit:cover; object-position:center top;">
+          </div>
+          <div style="position:absolute; left:0; right:0; bottom:0; padding:24px 26px; background:linear-gradient(180deg, rgba(11,22,38,0) 0%, rgba(11,22,38,0.85) 62%, rgba(11,22,38,0.95) 100%);">
+            <div style="font-size:12px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:#D4A94A; margin-bottom:6px;">IA aplicada</div>
+            <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:22px; color:#F5F6F8;">Guillermo Montaño</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 7) TESTIMONIALS -->
+  <section id="testimonials" style="background:#F5F6F8; padding:clamp(90px,13vh,150px) clamp(20px,5vw,64px);">
+    <div data-reveal style="max-width:1200px; margin:0 auto;">
+      <div style="max-width:640px; margin:0 0 56px;">
+        <span style="display:inline-block; font-family:'Archivo',sans-serif; font-weight:600; font-size:13px; letter-spacing:0.28em; text-transform:uppercase; color:#B98D2E; margin-bottom:22px;">Historias</span>
+        <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(28px,3.8vw,48px); line-height:1.08; letter-spacing:-0.015em; margin:0; color:#0B1626;">Dueños que ya llegaron a la cumbre.</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px;">
+        <div style="background:#FFFFFF; border:1px solid rgba(11,22,38,0.08); border-radius:18px; padding:36px 32px; display:flex; flex-direction:column;">
+          <div style="font-family:'Archivo',sans-serif; font-weight:900; font-size:52px; color:#D4A94A; line-height:0.6; margin-bottom:20px;">&ldquo;</div>
+          <p style="font-size:17px; line-height:1.6; color:#0B1626; margin:0 0 26px; flex:1;">Entré con curiosidad por la IA y salí con un sistema de ventas funcionando. En dos meses cerré tres clientes que llevaba un año persiguiendo.</p>
+          <div style="font-size:14px; color:#5A6B82;"><strong style="color:#14294D; font-weight:700;">[Nombre]</strong> · Dueño de [Consultora B2B]</div>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid rgba(11,22,38,0.08); border-radius:18px; padding:36px 32px; display:flex; flex-direction:column;">
+          <div style="font-family:'Archivo',sans-serif; font-weight:900; font-size:52px; color:#D4A94A; line-height:0.6; margin-bottom:20px;">&ldquo;</div>
+          <p style="font-size:17px; line-height:1.6; color:#0B1626; margin:0 0 26px; flex:1;">No es otro curso de IA lleno de teoría. Construí algo que mi equipo usa todos los días para vender.</p>
+          <div style="font-size:14px; color:#5A6B82;"><strong style="color:#14294D; font-weight:700;">[Nombre]</strong> · Fundadora de [Empresa de servicios B2B]</div>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid rgba(11,22,38,0.08); border-radius:18px; padding:36px 32px; display:flex; flex-direction:column;">
+          <div style="font-family:'Archivo',sans-serif; font-weight:900; font-size:52px; color:#D4A94A; line-height:0.6; margin-bottom:20px;">&ldquo;</div>
+          <p style="font-size:17px; line-height:1.6; color:#0B1626; margin:0 0 26px; flex:1;">Lo que más valoro es la comunidad. Avanzar junto a otros dueños en mi misma etapa cambió por completo cómo veo mi negocio.</p>
+          <div style="font-size:14px; color:#5A6B82;"><strong style="color:#14294D; font-weight:700;">[Nombre]</strong> · CEO de [PyME industrial]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8) PRICING -->
+  <section id="pricing" style="background:linear-gradient(180deg,#14294D 0%, #0B1626 100%); padding:clamp(90px,13vh,160px) clamp(20px,5vw,64px);">
+    <div data-reveal style="max-width:620px; margin:0 auto;">
+      <div style="text-align:center; margin-bottom:40px;">
+        <span style="display:inline-block; font-family:'Archivo',sans-serif; font-weight:600; font-size:13px; letter-spacing:0.28em; text-transform:uppercase; color:#D4A94A; margin-bottom:18px;">Aplica</span>
+        <h2 style="font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(28px,3.6vw,44px); line-height:1.1; letter-spacing:-0.015em; margin:0; color:#F5F6F8;">Un cohort. Un sistema que vende.</h2>
+      </div>
+      <div style="position:relative; background:linear-gradient(180deg,#1B355F 0%, #14294D 100%); border:1.5px solid rgba(212,169,74,0.55); border-radius:24px; padding:clamp(32px,5vw,52px); box-shadow:0 30px 80px -30px rgba(0,0,0,0.6);">
+        <div style="position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:#D4A94A; color:#0B1626; font-weight:700; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; padding:7px 18px; border-radius:100px;">Cupos limitados</div>
+        <div style="text-align:center; padding-top:8px; margin-bottom:32px;">
+          <div style="display:flex; align-items:baseline; justify-content:center; gap:8px;">
+            <span style="font-family:'Archivo',sans-serif; font-weight:900; font-size:clamp(48px,7vw,68px); color:#F5F6F8; line-height:1;">$1,700</span>
+            <span style="font-size:20px; color:rgba(245,246,248,0.6); font-weight:600;">USD</span>
+          </div>
+          <div style="font-size:15px; color:rgba(245,246,248,0.66); margin-top:10px;">Cohort completo · 8 semanas</div>
+        </div>
+        <ul style="list-style:none; margin:0 0 34px; padding:0; display:flex; flex-direction:column; gap:16px;">
+          <li style="display:flex; gap:14px; align-items:flex-start; font-size:16px; color:rgba(245,246,248,0.9);"><span style="color:#D4A94A; font-weight:800; flex-shrink:0;">✓</span>16 clases en vivo</li>
+          <li style="display:flex; gap:14px; align-items:flex-start; font-size:16px; color:rgba(245,246,248,0.9);"><span style="color:#D4A94A; font-weight:800; flex-shrink:0;">✓</span>Tu sistema de ventas con IA a la medida</li>
+          <li style="display:flex; gap:14px; align-items:flex-start; font-size:16px; color:rgba(245,246,248,0.9);"><span style="color:#D4A94A; font-weight:800; flex-shrink:0;">✓</span>Mentoría de expertos en ventas e IA</li>
+          <li style="display:flex; gap:14px; align-items:flex-start; font-size:16px; color:rgba(245,246,248,0.9);"><span style="color:#D4A94A; font-weight:800; flex-shrink:0;">✓</span>Comunidad privada de dueños B2B</li>
+          <li style="display:flex; gap:14px; align-items:flex-start; font-size:16px; color:rgba(245,246,248,0.9);"><span style="color:#D4A94A; font-weight:800; flex-shrink:0;">✓</span>Soporte y actualizaciones durante todo el cohort</li>
+        </ul>
+        <a href="#top" class="btn-cta btn-pricing revu-glow" style="display:block; text-align:center; background:#D4A94A; color:#0B1626; font-weight:700; font-size:17px; padding:17px; border-radius:100px; text-decoration:none; animation:revuGlow 3.5s ease-in-out infinite;">Aplica al próximo cohort →</a>
+        <p style="font-size:13px; line-height:1.55; color:rgba(245,246,248,0.5); text-align:center; margin:22px 0 0;">Cupos limitados por cohort para garantizar acompañamiento cercano. Aplicación sujeta a revisión.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9) FOOTER -->
+  <footer style="background:#0B1626; padding:clamp(64px,9vh,96px) clamp(20px,5vw,64px) 40px; border-top:1px solid rgba(245,246,248,0.08);">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:40px; margin-bottom:56px;">
+        <div>
+          <div style="font-family:'Archivo',sans-serif; font-weight:900; font-size:24px; letter-spacing:0.14em; color:#F5F6F8; margin-bottom:18px;">REVU</div>
+          <p style="font-size:15px; line-height:1.6; color:rgba(245,246,248,0.6); max-width:280px; margin:0;">La comunidad donde la IA se convierte en ventas.</p>
+        </div>
+        <div>
+          <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#D4A94A; margin-bottom:18px;">Programa</div>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <a href="#solucion" style="font-size:15px; color:rgba(245,246,248,0.68); text-decoration:none;">El cohort</a>
+            <a href="#features" style="font-size:15px; color:rgba(245,246,248,0.68); text-decoration:none;">Cómo funciona</a>
+            <a href="#mentores" style="font-size:15px; color:rgba(245,246,248,0.68); text-decoration:none;">Mentores</a>
+            <a href="#pricing" style="font-size:15px; color:rgba(245,246,248,0.68); text-decoration:none;">Preguntas frecuentes</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#D4A94A; margin-bottom:18px;">Comunidad</div>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <a href="#testimonials" style="font-size:15px; color:rgba(245,246,248,0.68); text-decoration:none;">Quiénes participan</a>
+            <a href="#testimonials" style="font-size:15px; color:rgba(245,246,248,0.68); text-decoration:none;">Historias</a>
+            <a href="#pricing" style="font-size:15px; color:rgba(245,246,248,0.68); text-decoration:none;">Aplicar</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#D4A94A; margin-bottom:18px;">Contacto</div>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <a href="mailto:hola@revu.co" style="font-size:15px; color:rgba(245,246,248,0.68); text-decoration:none;">hola@revu.co</a>
+            <a href="#top" style="font-size:15px; color:rgba(245,246,248,0.68); text-decoration:none;">Redes</a>
+          </div>
+        </div>
+      </div>
+      <div style="padding-top:28px; border-top:1px solid rgba(245,246,248,0.08); font-size:13px; color:rgba(245,246,248,0.42);">© 2026 REVU. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* --- Reveal on scroll (replaces prototype data-reveal + checkReveals) --- */
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll("[data-reveal]"));
+  function reveal(el) { el.classList.add("is-visible"); }
+
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          reveal(entry.target);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.01 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(reveal);
+  }
+  // Safety net: never leave anything permanently hidden.
+  setTimeout(function () { revealEls.forEach(reveal); }, 1600);
+
+  /* --- Parallax ridge (replaces prototype _onScroll) --- */
+  var ridge = document.getElementById("ridge");
+  function onScroll() {
+    if (!ridge || !ridge.parentElement) return;
+    var r = ridge.parentElement.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    var p = Math.max(-1, Math.min(1, (vh / 2 - (r.top + r.height / 2)) / vh));
+    ridge.style.transform = "translateY(" + (p * 40) + "px) scale(1.08)";
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* --- Hero video: play forward, then ping-pong in reverse and loop --- */
+  var video = document.getElementById("hero-video");
+  if (video) {
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+
+    var reversing = false;
+    var raf = null;
+
+    function play() {
+      reversing = false;
+      if (raf) cancelAnimationFrame(raf);
+      video.playbackRate = 1;
+      var pr = video.play();
+      if (pr && pr.catch) pr.catch(function () {});
+    }
+
+    function step() {
+      if (!reversing) return;
+      var t = video.currentTime - 1 / 30;
+      if (t <= 0.03) { video.currentTime = 0; play(); return; }
+      video.currentTime = t;
+      raf = requestAnimationFrame(step);
+    }
+
+    video.addEventListener("ended", function () {
+      reversing = true;
+      video.pause();
+      raf = requestAnimationFrame(step);
+    });
+    video.addEventListener("loadedmetadata", play);
+    if (video.readyState >= 1) play();
+  }
+})();
+</script>
+</body>
+</html>

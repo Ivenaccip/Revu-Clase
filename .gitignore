@@ -1,0 +1,9 @@
+# Editor / tooling metadata (Claude Design)
+.thumbnail
+.thumbnail/
+
+# OS cruft
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
